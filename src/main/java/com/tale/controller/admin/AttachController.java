@@ -79,7 +79,7 @@ public class AttachController extends BaseController {
     @JSON
     public RestResponse upload(Request request) {
 
-        log.info("UPLOAD DIR = {}", TaleUtils.UP_DIR);
+//        log.info("UPLOAD DIR = {}", TaleUtils.UP_DIR);
 
         Users                 users       = this.user();
         Integer               uid         = users.getUid();
@@ -100,7 +100,7 @@ public class AttachController extends BaseController {
                     try {
                         Files.write(Paths.get(filePath), f.getData());
                     } catch (IOException e) {
-                        log.error("", e);
+//                        log.error("", e);
                     }
 
                     Attach attach = new Attach();
@@ -128,7 +128,7 @@ public class AttachController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }
@@ -146,7 +146,7 @@ public class AttachController extends BaseController {
             siteService.cleanCache(Types.C_STATISTICS);
             String             filePath = CLASSPATH.substring(0, CLASSPATH.length() - 1) + fkey;
             java.nio.file.Path path     = Paths.get(filePath);
-            log.info("Delete attach: [{}]", filePath);
+//            log.info("Delete attach: [{}]", filePath);
             if (Files.exists(path)) {
                 Files.delete(path);
             }
@@ -157,7 +157,7 @@ public class AttachController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }

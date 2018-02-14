@@ -28,8 +28,8 @@ public class BaseWebHook implements WebHook {
             return false;
         }
 
-        log.info("UserAgent: {}", request.userAgent());
-        log.info("用户访问地址: {}, 来路地址: {}", uri, ip);
+//        log.info("UserAgent: {}", request.userAgent());
+//        log.info("用户访问地址: {}, 来路地址: {}", uri, ip);
 
         if (uri.startsWith(TaleConst.STATIC_URI)) {
             return true;

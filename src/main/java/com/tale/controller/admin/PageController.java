@@ -77,7 +77,7 @@ public class PageController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }
@@ -100,7 +100,7 @@ public class PageController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }
@@ -118,7 +118,7 @@ public class PageController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }

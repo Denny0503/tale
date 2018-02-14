@@ -201,7 +201,7 @@ public class IndexController extends BaseController {
             response.contentType("text/xml; charset=utf-8");
             response.body(xml);
         } catch (Exception e) {
-            log.error("生成 rss 失败", e);
+//            log.error("生成 rss 失败", e);
         }
     }
 
@@ -221,7 +221,7 @@ public class IndexController extends BaseController {
             response.contentType("text/xml; charset=utf-8");
             response.body(xml);
         } catch (Exception e) {
-            log.error("生成 sitemap 失败", e);
+//            log.error("生成 sitemap 失败", e);
         }
     }
 
@@ -285,7 +285,7 @@ public class IndexController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }

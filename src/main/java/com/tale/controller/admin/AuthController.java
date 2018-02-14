@@ -68,7 +68,7 @@ public class AuthController extends BaseController {
             Users temp = new Users();
             temp.setLogged(DateKit.nowUnix());
             temp.update(user.getUid());
-            log.info("登录成功：{}", loginParam.getUsername());
+//            log.info("登录成功：{}", loginParam.getUsername());
             cache.set("login_error_count", 0);
 
             new Logs(LogActions.LOGIN, loginParam.getUsername(), request.address(), user.getUid()).save();
@@ -79,7 +79,7 @@ public class AuthController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }

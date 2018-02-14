@@ -62,7 +62,7 @@ public class TemplateController extends BaseController {
 
             request.attribute("tpls", files);
         } catch (IOException e) {
-            log.error("找不到模板路径");
+//            log.error("找不到模板路径");
         }
         return "admin/tpl_list";
     }
@@ -75,7 +75,7 @@ public class TemplateController extends BaseController {
             String content   = Files.readAllLines(Paths.get(filePath)).stream().collect(Collectors.joining("\n"));
             response.text(content);
         } catch (IOException e) {
-            log.error("获取模板文件失败", e);
+//            log.error("获取模板文件失败", e);
         }
     }
 
@@ -98,7 +98,7 @@ public class TemplateController extends BaseController {
             }
             return RestResponse.ok();
         } catch (Exception e) {
-            log.error("写入文件失败", e);
+//            log.error("写入文件失败", e);
             return RestResponse.fail("写入文件失败: " + e.getMessage());
         }
     }

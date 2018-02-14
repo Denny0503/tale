@@ -99,7 +99,7 @@ public class IndexController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }
@@ -160,7 +160,7 @@ public class IndexController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }
@@ -188,7 +188,7 @@ public class IndexController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }
@@ -255,12 +255,12 @@ public class IndexController extends BaseController {
             // sh tale.sh reload 10
             String webHome = new File(AttachController.CLASSPATH).getParent();
             String cmd     = "sh " + webHome + "/bin tale.sh reload " + sleep;
-            log.info("execute shell: {}", cmd);
+//            log.info("execute shell: {}", cmd);
             ShellUtils.shell(cmd);
             new Logs(LogActions.RELOAD_SYS, "", request.address(), this.getUid()).save();
             TimeUnit.SECONDS.sleep(sleep);
         } catch (Exception e) {
-            log.error("重启系统失败", e);
+//            log.error("重启系统失败", e);
         }
     }
 }

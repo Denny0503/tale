@@ -31,7 +31,7 @@ public final class SqliteJdbc {
         try {
             Class.forName("org.sqlite.JDBC");
         } catch (Exception e) {
-            log.error("load sqlite driver error", e);
+//            log.error("load sqlite driver error", e);
         }
     }
 
@@ -49,9 +49,9 @@ public final class SqliteJdbc {
                 DB_SRC = "jdbc:sqlite://" + DB_PATH;
             }
 
-            log.info("blade dev mode: {}", devMode);
-            log.info("load sqlite database path [{}]", DB_PATH);
-            log.info("load sqlite database src [{}]", DB_SRC);
+//            log.info("blade dev mode: {}", devMode);
+//            log.info("load sqlite database path [{}]", DB_PATH);
+//            log.info("load sqlite database src [{}]", DB_SRC);
 
             Connection con       = DriverManager.getConnection(DB_SRC);
             Statement  statement = con.createStatement();
@@ -63,14 +63,14 @@ public final class SqliteJdbc {
 
                 String sql = new BufferedReader(isr).lines().collect(Collectors.joining("\n"));
                 int    r   = statement.executeUpdate(sql);
-                log.info("initialize import database - {}", r);
+//                log.info("initialize import database - {}", r);
             }
             rs.close();
             statement.close();
             con.close();
-            log.info("database path is: {}", DB_PATH);
+//            log.info("database path is: {}", DB_PATH);
         } catch (Exception e) {
-            log.error("initialize database fail", e);
+//            log.error("initialize database fail", e);
         }
     }
 

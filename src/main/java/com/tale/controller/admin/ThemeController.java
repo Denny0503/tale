@@ -80,7 +80,7 @@ public class ThemeController extends BaseController {
             }
             request.attribute("theme_options", map);
         } catch (Exception e) {
-            log.error("解析主题设置出现异常", e);
+//            log.error("解析主题设置出现异常", e);
         }
         request.attribute("theme_options", map);
         return this.render("setting");
@@ -115,7 +115,7 @@ public class ThemeController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }
@@ -150,7 +150,7 @@ public class ThemeController extends BaseController {
             if (e instanceof TipException) {
                 msg = e.getMessage();
             } else {
-                log.error(msg, e);
+//                log.error(msg, e);
             }
             return RestResponse.fail(msg);
         }
